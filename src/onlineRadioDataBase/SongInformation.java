@@ -44,9 +44,10 @@ public class SongInformation extends ArtistInformation{
     public void setSongLenght(String songLenght) {
         String[] splitedSongLenght = songLenght.trim().split(":");
         Integer lenght = 0;
-        lenght += 60* Integer.parseInt(splitedSongLenght[0]);
-        lenght+= Integer.parseInt(splitedSongLenght[1]);
-        if (lenght < 0 || lenght > (14*60 + 59)){
+        try{
+            lenght += 60* Integer.parseInt(splitedSongLenght[0]);
+            lenght+= Integer.parseInt(splitedSongLenght[1]);
+        }catch (Exception ex){
             throw new IllegalArgumentException("Invalid song length.");
         }
         setSongMinutes(Integer.parseInt(splitedSongLenght[0]));

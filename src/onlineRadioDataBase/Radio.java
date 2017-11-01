@@ -10,7 +10,7 @@ import java.util.ArrayList;
     }
     public void addSongInformation(SongInformation songInformation){
         this.songInformations.add(songInformation);
-        System.out.println("Song added");
+        System.out.println("Song added.");
     }
 
      @Override
